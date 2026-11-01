@@ -1,0 +1,8 @@
+1. maximum from array
+2. string reverse
+3. address calculation & tracing
+4. loop execution
+5. sum of even numbers
+6. factorial using procedure
+7. count number of 1s in byte
+8. arithmetic expression+7 segment

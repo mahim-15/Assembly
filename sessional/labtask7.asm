@@ -1,0 +1,42 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+NUM   DB 5AH
+COUNT DB ?
+
+.CODE
+MAIN PROC
+
+    MOV AX,@DATA
+    MOV DS,AX
+
+    MOV AL,NUM
+    MOV CX,8
+    MOV BL,0
+
+COUNT_BITS:
+
+    SHR AL,1
+    JNC ZERO
+
+    INC BL
+
+ZERO:
+    LOOP COUNT_BITS
+
+    MOV COUNT,BL
+
+    ; Print result
+    MOV AL,COUNT
+    ADD AL,30H
+
+    MOV DL,AL
+    MOV AH,02H
+    INT 21H
+
+    MOV AH,4CH
+    INT 21H
+
+MAIN ENDP
+END MAIN
